@@ -1,1 +1,1 @@
-# trabalho-sdPrimeiro trabalho de Sistemas Digitais
+Primeiro trabalho de Sistemas Digitais
