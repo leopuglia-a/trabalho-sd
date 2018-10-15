@@ -7,18 +7,6 @@
 
 uint8_t isbuttonpressed(uint8_t position);
 
-#define set_button(DDR, PORT, P)\
-    clr_bit(DDR, P);\
-    set_bit(PORT, P);
-    
-#define button_op(PIN, P, OP, ARG)\
-    if(!isset_bit(PIN, P)){\
-        void *arg = ARG;\
-        OP(arg);\
-    while(!isset_bit(PIN, P))\
-        _delay_ms(10);\
-    while(!isset_bit(PIN,P)){\
-    }\
-}
+void set_button(uint8_t position);
 
 #endif
