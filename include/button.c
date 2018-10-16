@@ -1,5 +1,7 @@
 #include "button.h"
 
+// set pin as button
+
 void set_button(uint8_t position){
 	uint8_t pin;
 
@@ -17,7 +19,9 @@ void set_button(uint8_t position){
 	}
 
 }
-    
+   
+// if button is pressed return 1
+
 uint8_t isbuttonpressed(uint8_t position){
 
 	uint8_t pin;

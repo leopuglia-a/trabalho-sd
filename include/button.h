@@ -1,6 +1,5 @@
 #include "bitop.h"
 #include "setpin.h"
-#include <util/delay.h>
 
 #ifndef _button_h
 #define _button_h
