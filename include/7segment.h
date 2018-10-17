@@ -1,64 +1,13 @@
-#include "bitop.h"
+#include "setpin.h"
+#include "led.h"
+
 #ifndef _7segment_h
 #define _7segment_h
         
+uint8_t pina, pinb, pinc, pind, pine, pinf, ping, pinh;
 
-int displaysegment(int number){ 
-            // 0
-        switch(number){
-            case 0:          
-                clr_bit(PORTD, PD6);
-                clr_bit(PORTD, PD4);
-                clr_bit(PORTD, PD5);
-                clr_bit(PORTD, PD7);
-                clr_bit(PORTB, PB0);
-                clr_bit(PORTB, PB1);
-                set_bit(PORTB, PB2);
-                break;
-            // 1
-            case 1:
-                set_bit(PORTD, PD4);
-                clr_bit(PORTD, PD5);
-                clr_bit(PORTD, PD6);
-                set_bit(PORTD, PD7);
-                set_bit(PORTB, PB0);
-                set_bit(PORTB, PB1);
-                set_bit(PORTB, PB2);
-                break;
-            // 2
-            case 2:
-                clr_bit(PORTD, PD4);
-                clr_bit(PORTD, PD5);
-                set_bit(PORTD, PD6);
-                clr_bit(PORTD, PD7);
-                clr_bit(PORTB, PB0);
-                set_bit(PORTB, PB1);
-                clr_bit(PORTB, PB2);
-                
-                break;
-
-            case 3: 
-                clr_bit(PORTD, PD4);
-                clr_bit(PORTD, PD5);
-                clr_bit(PORTD, PD6);
-                clr_bit(PORTD, PD7);
-                set_bit(PORTB, PB0);
-                set_bit(PORTB, PB1);
-                clr_bit(PORTB, PB2);
-                break;
-
-            case 4:
-                set_bit(PORTD, PD4);
-                clr_bit(PORTD, PD5);
-                clr_bit(PORTD, PD6);
-                set_bit(PORTD, PD7);
-                set_bit(PORTB, PB0);
-                clr_bit(PORTB, PB1);
-                clr_bit(PORTB, PB2);
-
-                break;
-        }
-}
+void definepin(uint8_t pos, char pin);
+void display7seg (char value);
 
 #endif
 
