@@ -45,13 +45,13 @@ void definepin(uint8_t position, char pin){
 // show passed arg on in 7 segment display
 void display7seg(char value){
 	if (value == 'a'){
-		led_off(pina);
-		led_off(pinb);
-		led_off(pinc);
-		led_off(pind);
-		led_off(pine);
-		led_on(pinf);
-		led_off(ping);
+        setpinmode(1, pina);
+        setpinmode(1, pinb);
+        setpinmode(1, pinc);
+        setpinmode(1, pind);
+        setpinmode(1, pine);
+        setpinmode(0, pinf);
+        setpinmode(1, ping);
 	}
 }
 

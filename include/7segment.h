@@ -1,5 +1,6 @@
 #include "setpin.h"
 #include "led.h"
+#include "uart.h"
 
 #ifndef _7segment_h
 #define _7segment_h

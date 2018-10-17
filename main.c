@@ -24,7 +24,6 @@ int main(void){
   definepin(10, 'g');
 
   display7seg('a');
-  printf ("teste");
 
 	return 0;
 }
