@@ -2,6 +2,9 @@
 #include <avr/portpins.h>
 #include <util/delay.h>
 #include "include/setpin.h"
+#include "include/7segment.h"
+#include "include/uart.h"
+
 #define swt_bit(reg, pos) (reg ^= (1 << pos))	// mudança de estado
 #define clr_bit(reg, pos) (reg &= ~(1 << pos))	// limpar os bits de uma pos
 #define set_bit(reg, pos) (reg |= (1 << pos))	// setar bits 
@@ -10,31 +13,18 @@
 #define input 0
 #define output 1
 int main(void){	
-        // PB1 port9 button
-        // PB0 port8 led
-        // bit in as input
-        // DDR = set input or output
-        // PIN = read value from circuit
-        // PORT = set power from circuit
-//        clr_bit(DDRB, PB1);
-//   		DDRB = 00000010; 
-//		PORTB = 00000010;
-		setmode(output, 9);
-//        set_bit(DDRD, PD3);
-		swt_bit(PORTB, 1);
+  uart_init();
 
-//        set_bit(PORTB, PB1);
-        
-//		while (1) {
-		
-         //   if(!isset_bit(PINB, PB1)){
-  //              swt_bit(PORTB, PB0);
-               // while (!isset_bit(PINB,PB1)); // Aguarde o botão ser solto
-    //            _delay_ms(300);
-        
-           // }
-                
-//	}
+  definepin(4, 'a');
+  definepin(5, 'b');
+  definepin(6, 'c');
+  definepin(7, 'd');
+  definepin(8, 'e');
+  definepin(9, 'f');
+  definepin(10, 'g');
+
+  display7seg('a');
+  printf ("teste");
 
 	return 0;
 }

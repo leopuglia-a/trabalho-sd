@@ -8,35 +8,35 @@
 void definepin(uint8_t position, char pin){
 
 
-	if (pin == "a"){
+	if (pin == 'a'){
 		pina = position;
 	}
 
-	if (pin == "b"){
+	if (pin == 'b'){
 		pinb = position;
 	}
 
-	if (pin == "c"){
+	if (pin == 'c'){
 		pinc= position;
 	}
 
-	if (pin == "d"){
+	if (pin == 'd'){
 		pind = position;
 	}
 
-	if (pin == "e"){
+	if (pin == 'e'){
 		pine = position;
 	}
 
-	if (pin == "f"){
+	if (pin == 'f'){
 		pinf = position;
 	}
 
-	if (pin == "g"){
+	if (pin == 'g'){
 		ping = position;
 	}
 
-	if (pin == "h"){
+	if (pin == 'h'){
 		pinh = position;
 	}
 }
@@ -44,7 +44,7 @@ void definepin(uint8_t position, char pin){
 // need to off (clr) pin port to turn segment on
 // show passed arg on in 7 segment display
 void display7seg(char value){
-	if (value == "a"){
+	if (value == 'a'){
 		led_off(pina);
 		led_off(pinb);
 		led_off(pinc);
@@ -53,59 +53,6 @@ void display7seg(char value){
 		led_on(pinf);
 		led_off(ping);
 	}
-        switch(number){
-            case 0:          
-                clr_bit(PORTD, PD6);
-                clr_bit(PORTD, PD4);
-                clr_bit(PORTD, PD5);
-                clr_bit(PORTD, PD7);
-                clr_bit(PORTB, PB0);
-                clr_bit(PORTB, PB1);
-                set_bit(PORTB, PB2);
-                break;
-            // 1
-            case 1:
-                set_bit(PORTD, PD4);
-                clr_bit(PORTD, PD5);
-                clr_bit(PORTD, PD6);
-                set_bit(PORTD, PD7);
-                set_bit(PORTB, PB0);
-                set_bit(PORTB, PB1);
-                set_bit(PORTB, PB2);
-                break;
-            // 2
-            case 2:
-                clr_bit(PORTD, PD4);
-                clr_bit(PORTD, PD5);
-                set_bit(PORTD, PD6);
-                clr_bit(PORTD, PD7);
-                clr_bit(PORTB, PB0);
-                set_bit(PORTB, PB1);
-                clr_bit(PORTB, PB2);
-                
-                break;
-
-            case 3: 
-                clr_bit(PORTD, PD4);
-                clr_bit(PORTD, PD5);
-                clr_bit(PORTD, PD6);
-                clr_bit(PORTD, PD7);
-                set_bit(PORTB, PB0);
-                set_bit(PORTB, PB1);
-                clr_bit(PORTB, PB2);
-                break;
-
-            case 4:
-                set_bit(PORTD, PD4);
-                clr_bit(PORTD, PD5);
-                clr_bit(PORTD, PD6);
-                set_bit(PORTD, PD7);
-                set_bit(PORTB, PB0);
-                clr_bit(PORTB, PB1);
-                clr_bit(PORTB, PB2);
-
-                break;
-        }
 }
 
 // clr bit acende o led
