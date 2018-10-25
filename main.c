@@ -1,10 +1,13 @@
 #include <avr/io.h>
 #include <avr/portpins.h>
 #include <util/delay.h>
+#include <stdbool.h>
 #include "include/setpin.h"
 #include "include/7segment.h"
 #include "include/uart.h"
 #include "include/button.h"
+#include "include/distancesensor.h"
+#include "include/delay.h"
 
 #define swt_bit(reg, pos) (reg ^= (1 << pos))	// mudança de estado
 #define clr_bit(reg, pos) (reg &= ~(1 << pos))	// limpar os bits de uma pos
@@ -13,15 +16,19 @@
 
 #define input 0
 #define output 1
+
+
+
 int main(void){	
-  uart_init();
-  setpinmode(1, 8);
-  set_button(9);
-  while(1){
-    if (isbuttonpressed(9, 0)){
-     blink_led(8, 200);
-    }
-  }
+	uart_init();
+	setpinmode(1, 8);
+
+	while(1){
+		led_on(8);
+		m_delay(1000);
+		led_off(8);
+		m_delay(1000);
+	}
 
 	return 0;
 }
