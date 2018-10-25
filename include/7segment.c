@@ -86,7 +86,7 @@ void display7seg(char value){
 
 	if (value == 'e'){
         setpinmode(1, pina);
-        setpinmode(1, pinb);
+        setpinmode(0, pinb);
         setpinmode(0, pinc);
         setpinmode(1, pind);
         setpinmode(1, pine);
@@ -105,22 +105,22 @@ void display7seg(char value){
 	}
 
 	if (value == '1'){
-        setpinmode(1, pina);
+        setpinmode(0, pina);
         setpinmode(1, pinb);
-        setpinmode(0, pinc);
+        setpinmode(1, pinc);
         setpinmode(0, pind);
         setpinmode(0, pine);
         setpinmode(0, pinf);
         setpinmode(0, ping);
 	}
-
+                // 2 4  5
 	if (value == '2'){
         setpinmode(1, pina);
         setpinmode(1, pinb);
         setpinmode(0, pinc);
         setpinmode(1, pind);
-        setpinmode(0, pine);
-        setpinmode(1, pinf);
+        setpinmode(1, pine);
+        setpinmode(0, pinf);
         setpinmode(1, ping);
 	}
 	
@@ -135,18 +135,18 @@ void display7seg(char value){
 	}
 
 	if (value == '4'){
-        setpinmode(1, pina);
+        setpinmode(0, pina);
         setpinmode(1, pinb);
         setpinmode(1, pinc);
         setpinmode(0, pind);
-        setpinmode(1, pine);
-        setpinmode(0, pinf);
+        setpinmode(0, pine);
+        setpinmode(1, pinf);
         setpinmode(1, ping);
 	}
 
 	if (value == '5'){
         setpinmode(1, pina);
-        setpinmode(1, pinb);
+        setpinmode(0, pinb);
         setpinmode(1, pinc);
         setpinmode(1, pind);
         setpinmode(0, pine);
