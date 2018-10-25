@@ -1,28 +1,38 @@
-Primeiro trabalho de Sistemas Digitais
+# atmega328p Libraries Pack
 
+###### **This pack of libraries was made with the intention of making the life of atmega328p microcontroller programmers easier**
 
-Manipular os pinos de E/S digitais
+-----------------
 
-Obs.: os pinos devem ser mapeados pela numeração fornecida pelo Arduino
+## The _setpin_ library
+This library intends to manipulate the I/O digital pins
 
-    Configurar o pino como entrada ou saída;
-    Setar o pino com o valor HIGH (1) ou LOW (0);
-    Ler o valor do pino;
-    Ativar o pull-up (quando o pino for entrada);
+### finalpos function:
 
-Geração de onda nos pinos
+The objective of this function is to return the position of the pin according to the position passed as argument.
 
-Obs.: se o pino escolhido pelo usuário não fornecer geração de onda, o comportamento deverá ser de uma escrita digital simples
+### setpinmode function:
 
-    Escrever onda quadrada em um pino de saída (que suporte essa função) com frequência determinada pelo usuário;
-    Escrever onda PWM em um pino de saída (que suporte essa função) com ciclo-ativo determinado pelo usuário;
+The objective of this function is to set a pin as input or output. The first argument of the function is the mode wanted (0 for input and 1 for output), and the second argument is the position of the pin in the arduino.
 
-Delay com tempo variável
+### setpinvalue function:
 
-Obs.: implementar com laço em assembly para não utilizar Timer/Counter
+The objective of this function is to set a pin value as high or low. The first argument is the value (0 for low and 1 for high), and the second argument is the position of the pin in the arduino.
 
-    Rotina de delay com precisão de microssegundo;
-    Rotina de delay com precisão de milissegundo;
+-----------------
+
+## The _delay_ library
+This library intends to implement precise delay routines, written in assembly.
+
+### u_delay function:
+
+The objective of this function is to implement a microsecond delay. The unique argument is the amount of microseconds wanted.
+
+### m_delay function:
+
+The objective of this function is to implement a millisecond delay. The unique argument is the amount of milliseconds wanted.
+
+-----------------
 
 Interface para utilização de LEDs:
 
