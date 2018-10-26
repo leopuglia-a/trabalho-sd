@@ -4,6 +4,14 @@
 
 -----------------
 
+## Running program
+
+To use this library, write your desired code at main.c, aftwards to compile and run use:
+```
+make 
+make install
+```
+
 ## The _setpin_ library
 This library intends to manipulate the I/O digital pins
 
